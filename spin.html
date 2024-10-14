@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Screen</title>
+    <style>
+        body {
+            transition: transform 1s;
+        }
+    </style>
+    <script>
+        function rotateScreen() {
+            let angle = 0;
+            setInterval(function() {
+                angle = (angle + 360) % 360;
+                document.body.style.transform = 'rotate(' + angle + 'deg)';
+            }, 1000); // 1000 milliseconds (1 second) for each rotation
+        }
+    </script>
+</head>
+<body onload="rotateScreen()">
+    <h1>Enjoy the spin!</h1>
+</body>
+</html>
